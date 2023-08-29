@@ -6,9 +6,16 @@ import { urlFor } from "../sanity";
 type Props = {
   pageInfo: PageInfo;
 };
+type SectionKey = "primaryTechnologies" | "databaseAndStorage" | "frameworksAndLibraries" | "others";
+
+
+type Section = {
+  key: SectionKey;
+  displayName: string;
+}
 
 function About({ pageInfo }: Props) {
-  const sections = [
+  const sections: Section[] = [
     { key: "primaryTechnologies", displayName: "Primary Technologies" },
     { key: "databaseAndStorage", displayName: "Database & Storage" },
     { key: "frameworksAndLibraries", displayName: "Frameworks & Libraries" },
