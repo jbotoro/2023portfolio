@@ -1,61 +1,74 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-    const projects = [1,2,3,4,5]
-	return (
-		<motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="h-screen relative flex overflow-hideen flex-col text-left md:flex-row nax-w-full justify-evenly mx-auto items-center z-0"
-        >
-			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
-				Projects
-			</h3>
+function Projects({ projects }: Props) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 overflow-y-scroll "
+    >
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#c084fc] text-2xl">
+        Projects
+      </h3>
 
-			<div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
-				{projects.map((project, i) => (
-					<div
-						key={i}
-						className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-					>
-						<motion.img
-                            initial={{
-                                y: -300,
-                                opacity: 0,
-                            }}
-                            transition={{ duration: 1.2 }}
-                            whileInView={{
-                                y: 0,
-                                opacity: 1,
-                            }}
-                            viewport={{ once: true }}
-							src="sanityPlaceholder"
-							alt="placeholder"
-						/>
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-[calc(8rem+64px)] scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#C084FC]/80">
+        {projects.map((project, i) => (
+          <div
+            key={i}
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center md:p-20 sm:p-10 h-[calc(100vh - 2.5rem - 24px)]"
+          >
+            <a
+              href={project.linkToProject}
+              target="_blank"
+              rel="noopener noreferrer"
+							className="transition-transform transform hover:scale-105"
+            >
+              <motion.img
+                initial={{
+                  y: -300,
+                  opacity: 0,
+                }}
+                transition={{ duration: 1.2 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                viewport={{ once: true }}
+                src={urlFor(project.image).url()}
+                alt="placeholder"
+                className="max-h-[50vh] object-contain max-w-[50vw]"
+              />
+            </a>
 
-						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
-							<h4 className="text-4xl font-semibold text-center">
-								<span className="underline decoration-[#F7AB0A]/50">
-									Project {i + 1} of {projects.length}:
-								</span>{" "}
-								Clone
-							</h4>
+            <div className="space-y-10 px-10 max-w-6xl">
+              <h4 className="text-4xl font-semibold text-center">
+                <span className="underline decoration-[#C084FC]/50">
+                  Project {i + 1} of {projects.length}:
+                </span>{" "}
+                {project.title}
+              </h4>
 
-                            <p className="text-lg text-center md:text-left">
-                                This is a test Project description
-                            </p>
-						</div>
-					</div>
-				))}
-			</div>
+              <ul className="list-disc pl-5 text-lg text-left max-h-[50vh] overflow-y-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#C084FC]/80">
+                {project.points.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
 
-			<div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>
-		</motion.div>
-	);
+      <div className="w-full absolute top-[30%] bg-[#7e22ce]/10 left-0 h-[500px] -skew-y-12"></div>
+    </motion.div>
+  );
 }
 
 export default Projects;

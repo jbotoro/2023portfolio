@@ -1,3 +1,4 @@
+import { Project } from './typings.d';
 interface SanityBody {
     _createtdAt: string;
     _id: string;
@@ -23,6 +24,20 @@ export interface PageInfo extends SanityBody {
     name: string;
     phoneNumber: string;
     profilePic: Image;
+    primaryTechnologies: string;
+    databaseAndStorage: string;
+    frameworksAndLibraries: string;
+    others: string;
+}
+
+export interface Project extends SanityBody {
+    _type: "project";
+    title: string;
+    image: Image;
+    linkToProject: string;
+    points: string[];
+    summary: string;
+    technologiesUsed: Technology[];
 }
 
 export interface Technology extends SanityBody {

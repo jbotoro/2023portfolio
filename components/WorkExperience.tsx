@@ -19,13 +19,14 @@ function WorkExperience({experiences}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="h-screen flex relative flex-col text-lft max-w-full px-10 justify-evenly mx-auto items-center"
+			className="flex flex-col space-y-5 py-10 px-10 mobile:py-20 max-w-full mx-auto items-center overflow-y-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#C084FC]/80"
+			// style={{ height: 'calc(100vh - 90px' }}
 		>
-			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+			<h3 className="uppercase tracking-[20px] text-[#c084fc] text-2xl">
 				Experience
 			</h3>
 
-			<div className="w-full p-10 ">
+			<div className="w-full space-y-5">
 				{experiences.map((experience) => (
 					<ExperienceCard
 						key={experience._id}

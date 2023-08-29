@@ -29,6 +29,26 @@ export default defineType({
 			type: 'string',
 		}),
 		defineField({
+			name: 'primaryTechnologies',
+			title: 'PrimaryTechnologies',
+			type: 'string',
+		}),
+		defineField({
+			name: 'databaseAndStorage',
+			title: 'DatabaseAndStorage',
+			type: 'string',
+		}),
+		defineField({
+			name: 'frameworksAndLibraries',
+			title: 'FrameworksAndLibraries',
+			type: 'string',
+		}),
+		defineField({
+			name: 'others',
+			title: 'Others',
+			type: 'string',
+		}),
+		defineField({
 			name: 'profilePic',
 			title: 'ProfilePic',
 			type: 'image',

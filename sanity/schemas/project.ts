@@ -22,7 +22,13 @@ export default defineType({
         defineField({
             name: 'summary',
             title: 'Summary',
-            type: 'text',
+            type: 'string',
+        }),
+        defineField({
+            name: 'points',
+			title: 'Points',
+			type: 'array',
+			of: [{ type: 'string' }],
         }),
         defineField({
             name: 'technologiesUsed',

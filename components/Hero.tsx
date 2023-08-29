@@ -5,7 +5,6 @@ import {
 	useTypewriter,
 } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import ProfilePic from "../public/images/profilepic.jpg";
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
@@ -38,14 +37,14 @@ export default function Hero({ pageInfo }: Props) {
 				height={128}
 			/>
 			<div className="z-20">
-				<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+				<h2 className="text-sm uppercase text-[#C084FC] pb-2 tracking-[15px]">
 					{pageInfo.role}
 				</h2>
 				<h1 className="text-4xl lg:text-6xl font-semibold px-10">
 					<span className="mr-3">{text}</span>
-					<Cursor cursorColor="#F7AB0A" />
+					<Cursor cursorColor="#c084fc" />
 				</h1>
-				<div className="pt-5">
+				<div className="pt-5 text-[#d8b4fe]">
 					<Link href="#about">
 						<button className="heroButton">
 							{" "}
