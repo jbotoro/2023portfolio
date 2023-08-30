@@ -12,7 +12,7 @@ type SectionKey = "primaryTechnologies" | "databaseAndStorage" | "frameworksAndL
 type Section = {
   key: SectionKey;
   displayName: string;
-}
+};
 
 function About({ pageInfo }: Props) {
   const sections: Section[] = [

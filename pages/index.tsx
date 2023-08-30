@@ -15,7 +15,6 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
 import { urlFor } from "../sanity";
-import { ImageError } from "next/dist/server/image-optimizer";
 import Image from "next/image";
 
 type Props = {
@@ -70,7 +69,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
             <div className="w-10 h-10 rounded-full overflow-hidden relative transition-transform transform hover:scale-105">
               <Image
                 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain cursor-pointer filter grayscale hover:grayscale-0 "
-                src={urlFor(pageInfo.heroImage).url()}
+                src={urlFor(pageInfo?.heroImage).url()}
                 alt="Hero section"
                 width={40}
                 height={40}
