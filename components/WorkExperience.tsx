@@ -19,8 +19,7 @@ function WorkExperience({experiences}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="flex flex-col space-y-5 py-10 px-10 mobile:py-20 max-w-full mx-auto items-center overflow-y-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#C084FC]/80"
-			// style={{ height: 'calc(100vh - 90px' }}
+			className="flex flex-col space-y-5 px-10 py-20 md:py-10 max-w-full mx-auto items-center overflow-y-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#C084FC]/80"
 		>
 			<h3 className="uppercase tracking-[20px] text-[#c084fc] text-2xl">
 				Experience

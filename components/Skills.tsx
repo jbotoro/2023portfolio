@@ -23,7 +23,7 @@ function Skills({ skills }: Props) {
       whileInView={{ opacity: 1 }}
       className="flex relative flex-col text-center md:text-left max-w-[2000px] xl:px-10 min-h-screen justify-center items-center pb-20 w-full sm:max-w-[600px] mx-auto"
     >
-      <h3 className="mb-20 sm:mt-5 md:mb-5 md:mt-20 uppercase tracking-[20px] text-[#c084fc] text-sm mobile:text-2xl text-center w-full">
+      <h3 className="mb-20 sm:mt-5 md:mb-5 md:mt-20 uppercase tracking-[20px] text-[#c084fc] text-2xl text-center w-full">
         Skills
       </h3>
       {!isSmallScreen && (
