@@ -32,16 +32,6 @@ function Projects({ projects }: Props) {
 							className="transition-transform transform hover:scale-105"
             >
               <motion.img
-                initial={{
-                  y: -300,
-                  opacity: 0,
-                }}
-                transition={{ duration: 1.2 }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                }}
-                viewport={{ once: true }}
                 src={urlFor(project.image).url()}
                 alt="placeholder"
                 className=" max-w-[300px] max-h-[300px] object-contain sm:max-h-[50vh] sm:max-w-[50vw]"
