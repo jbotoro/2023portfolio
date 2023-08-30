@@ -44,7 +44,7 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project.image).url()}
                 alt="placeholder"
-                className="max-h-[50vh] object-contain max-w-[50vw]"
+                className=" max-w-[300px] max-h-[300px] object-contain sm:max-h-[50vh] sm:max-w-[50vw]"
               />
             </a>
 
